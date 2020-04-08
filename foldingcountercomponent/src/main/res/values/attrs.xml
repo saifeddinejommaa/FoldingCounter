@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CounterView">
+        <attr name="custom_component_title" format="reference" />
+        <attr name="digitTextSize" format="dimension" />
+        <attr name="digitPadding" format="dimension" />
+        <attr name="digitCornerSize" format="dimension" />
+        <attr name="digitTextColor" format="color" />
+        <attr name="digitBackgroundColor" format="color" />
+        <attr name="digitNumberColor" format="color" />
+        <attr name="digitDeviderColor" format="color" />
+        <attr name="digitspringColor" format="color"></attr>
+    </declare-styleable>
+
+</resources>
