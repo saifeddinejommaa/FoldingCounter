@@ -1,4 +1,4 @@
-package com.example.numericcounterlibrary.counterwidget
+package com.jommaa.counterwidget
 
 import android.content.Context
 import android.graphics.Canvas
@@ -11,8 +11,8 @@ import android.graphics.RectF
 import androidx.core.view.ViewCompat
 import android.util.AttributeSet
 import android.view.View
-import com.example.jommaa.customnumericcounter.R
-import com.example.numericcounterlibrary.utils.MatrixHelper
+import com.jommaa.foldingcountercomponent.R
+import com.jommaa.utils.MatrixHelper
 
 import java.util.ArrayList
 

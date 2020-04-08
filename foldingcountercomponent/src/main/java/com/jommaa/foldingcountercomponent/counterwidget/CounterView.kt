@@ -1,11 +1,11 @@
-package com.example.numericcounterlibrary.counterwidget
+package com.jommaa.counterwidget
 
 
 import android.content.Context
 import androidx.core.view.ViewCompat
 import android.util.AttributeSet
 import android.widget.LinearLayout
-import com.example.numericcounterlibrary.R
+import com.jommaa.foldingcountercomponent.R
 import kotlinx.android.synthetic.main.clock.view.*
 
 /**

@@ -16,12 +16,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
-            <com.example.numericcounterlibrary.counterwidget.TabDigit
+            <com.jommaa.counterwidget.TabDigit
                 android:id="@+id/charHighHour"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
-            <com.example.numericcounterlibrary.counterwidget.TabDigit
+            <com.jommaa.counterwidget.TabDigit
                 android:id="@+id/charLowHour"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
@@ -53,12 +53,12 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <com.example.numericcounterlibrary.counterwidget.TabDigit
+            <com.jommaa.counterwidget.TabDigit
                 android:id="@+id/charHighMinute"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
-            <com.example.numericcounterlibrary.counterwidget.TabDigit
+            <com.jommaa.counterwidget.TabDigit
                 android:id="@+id/charLowMinute"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
@@ -88,12 +88,12 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <com.example.numericcounterlibrary.counterwidget.TabDigit
+            <com.jommaa.counterwidget.TabDigit
                 android:id="@+id/charHighSecond"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
-            <com.example.numericcounterlibrary.counterwidget.TabDigit
+            <com.jommaa.counterwidget.TabDigit
                 android:id="@+id/charLowSecond"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />

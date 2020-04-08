@@ -1,4 +1,4 @@
-package com.example.numericcounterlibrary.utils
+package com.jommaa.utils
 
 import android.graphics.Camera
 import android.graphics.Matrix
