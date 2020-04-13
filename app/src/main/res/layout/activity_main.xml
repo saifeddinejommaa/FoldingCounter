@@ -6,16 +6,21 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-   <com.jommaa.counterwidget.CounterView
-    android:id="@+id/counterView"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_centerInParent="true"
-    app:digitTextColor="@color/colorAccent"
-    app:digitBackgroundColor="@color/colorPrimary"
-    app:digitPadding="20dp"
-    app:digitspringColor="#ffffff"
-    app:digitTextSize="60sp"/>
+    <Button
+        android:id="@+id/CounterUp"
+        android:layout_width="wrap_content"
+        android:text="Counter Up"
+        android:layout_centerInParent="true"
+        android:layout_height="wrap_content"></Button>
+
+    <Button
+        android:id="@+id/CounterDown"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/CounterUp"
+        android:layout_width="wrap_content"
+        android:text="Counter Down"
+        android:layout_centerInParent="true"
+        android:layout_height="wrap_content"></Button>
 
 
 </RelativeLayout>

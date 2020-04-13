@@ -3,10 +3,7 @@ package com.jommaa.counterwidget
 
 import android.content.Context
 import android.util.AttributeSet
-import android.view.View
-import android.widget.LinearLayout
 import androidx.core.view.ViewCompat
-import com.jommaa.foldingcountercomponent.R
 import com.jommaa.foldingcountercomponent.counterwidget.BaseCounterView
 import kotlinx.android.synthetic.main.clock.view.*
 
@@ -15,11 +12,11 @@ import kotlinx.android.synthetic.main.clock.view.*
  * Created by JOMMAA on 05/11/2019.
  */
 
-class CounterView(
+class CounterUpView(
         context: Context,
         attrs: AttributeSet)  : BaseCounterView(context,attrs) {
 
-    fun setTime(shouldPause: Boolean, shouldRun: Boolean) {
+    override fun  setTime(shouldPause: Boolean, shouldRun: Boolean) {
         mPause = shouldPause
         isRunning = shouldRun
         var time = elapsedTime

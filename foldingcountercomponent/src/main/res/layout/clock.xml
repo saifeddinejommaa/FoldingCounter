@@ -29,6 +29,7 @@
         </LinearLayout>
 
         <TextView
+            android:id="@+id/HourText"
             android:layout_width="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_gravity="center"
@@ -65,6 +66,7 @@
         </LinearLayout>
 
         <TextView
+            android:id="@+id/MinutesText"
             android:layout_width="match_parent"
             android:layout_marginTop="10dp"
             android:layout_height="wrap_content"
@@ -100,6 +102,7 @@
         </LinearLayout>
 
         <TextView
+            android:id="@+id/SecondText"
             android:layout_width="match_parent"
             android:layout_marginTop="10dp"
             android:layout_height="wrap_content"
