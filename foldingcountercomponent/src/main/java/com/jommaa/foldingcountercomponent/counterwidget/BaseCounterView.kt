@@ -5,20 +5,23 @@ import android.util.AttributeSet
 import android.view.View
 import android.widget.LinearLayout
 import com.jommaa.foldingcountercomponent.R
+import com.jommaa.foldingcountercomponent.utils.CounterType
 import kotlinx.android.synthetic.main.clock.view.*
 
-abstract class BaseCounterView (context: Context,
-attrs: AttributeSet)  : LinearLayout(context,attrs), Runnable {
+abstract class BaseCounterView (context: Context,counterType: CounterType?,
+attrs: AttributeSet?)  : LinearLayout(context,attrs), Runnable {
 
-    protected var totalTime = 10 * 60 * 60.toLong()
-    protected val startedTime = System.currentTimeMillis()
+
+   // protected val startedTime = System.currentTimeMillis()
     protected var mPause = true
-
-    protected var elapsedTime: Long = 0
+    protected var startedTime: Long = 0
 
      var isRunning = false
         protected set
     protected val mClock = this
+
+    constructor(context: Context):this(context,null,null){
+    }
 
     init {
         inflate(context, R.layout.clock, this)
@@ -43,7 +46,7 @@ attrs: AttributeSet)  : LinearLayout(context,attrs), Runnable {
         charHighSecond.paddingHeight= padding
         charHighSecond.dividerColor = dividerColor
         charHighSecond.springColor =  springColor
-        charHighSecond.chars = BaseCounterView.SEXAGISIMAL
+
 
         //Low Second
         charLowSecond.textSize = textSize.toFloat()
@@ -63,7 +66,8 @@ attrs: AttributeSet)  : LinearLayout(context,attrs), Runnable {
         charHighMinute.cornerSize = cornerSize
         charHighMinute.paddingHeight= padding
         charHighMinute.dividerColor = dividerColor
-        charHighMinute.chars = BaseCounterView.SEXAGISIMAL
+
+
         charHighMinute.springColor =  springColor
 
         //Low Minutes
@@ -104,13 +108,31 @@ attrs: AttributeSet)  : LinearLayout(context,attrs), Runnable {
             SecondText.visibility = View.GONE
         }
 
+        when(counterType){
+            CounterType.CounterDown -> {
+                charHighMinute.chars = COUNTER_DOWN_SEXAGISIMAL
+                charHighHour.chars = COUNTER_DOWN_DECIMAL
+                charLowHour.chars = COUNTER_DOWN_DECIMAL
+                charHighSecond.chars = COUNTER_DOWN_SEXAGISIMAL
+                charLowMinute.chars = COUNTER_DOWN_DECIMAL
+                charLowSecond.chars = COUNTER_DOWN_DECIMAL
+            }
+            CounterType.CounterUP -> {
+                charHighMinute.chars = COUNTER_UP_SEXAGISIMAL
+                charHighHour.chars = COUNTER_UP_DECIMAL
+                charLowHour.chars = COUNTER_UP_DECIMAL
+                charHighSecond.chars = COUNTER_UP_SEXAGISIMAL
+                charLowMinute.chars = COUNTER_UP_DECIMAL
+                charLowSecond.chars = COUNTER_UP_DECIMAL
+            }
+
+        }
+
         attributes.recycle()
 
     }
 
-    abstract fun setTime(shouldPause: Boolean, shouldRun: Boolean)
-
-
+    abstract fun setTime(startedTime :Long)
 
     fun pause() {
         mPause = true
@@ -125,9 +147,13 @@ attrs: AttributeSet)  : LinearLayout(context,attrs), Runnable {
 
     companion object {
 
-        private val HOURS = charArrayOf('0', '1', '2')
+        private val COUNTER_UP_SEXAGISIMAL = charArrayOf('0', '1', '2', '3', '4', '5')
+        private val COUNTER_DOWN_SEXAGISIMAL = charArrayOf('5', '4', '3', '2', '1', '0')
 
-        private val SEXAGISIMAL = charArrayOf('0', '1', '2', '3', '4', '5')
+        private val COUNTER_UP_DECIMAL = charArrayOf('0', '1', '2', '3', '4', '5', '6', '7', '8', '9')
+        private val COUNTER_DOWN_DECIMAL = charArrayOf('9', '8', '7', '6', '5', '4', '3', '2', '1', '0')
+
+        private val High_HOUR = charArrayOf('0','1','2')
     }
 
 }

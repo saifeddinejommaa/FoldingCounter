@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".CounterUpActivity">
 
     <com.jommaa.counterwidget.CounterUpView
-        android:id="@+id/counterView"
+        android:id="@+id/counterUpView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"

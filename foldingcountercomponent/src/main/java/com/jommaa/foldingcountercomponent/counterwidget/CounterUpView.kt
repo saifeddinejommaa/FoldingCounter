@@ -5,6 +5,7 @@ import android.content.Context
 import android.util.AttributeSet
 import androidx.core.view.ViewCompat
 import com.jommaa.foldingcountercomponent.counterwidget.BaseCounterView
+import com.jommaa.foldingcountercomponent.utils.CounterType
 import kotlinx.android.synthetic.main.clock.view.*
 
 
@@ -14,12 +15,12 @@ import kotlinx.android.synthetic.main.clock.view.*
 
 class CounterUpView(
         context: Context,
-        attrs: AttributeSet)  : BaseCounterView(context,attrs) {
+        attrs: AttributeSet)  : BaseCounterView(context,CounterType.CounterUP, attrs) {
 
-    override fun  setTime(shouldPause: Boolean, shouldRun: Boolean) {
-        mPause = shouldPause
-        isRunning = shouldRun
-        var time = elapsedTime
+    override fun  setTime(startedTime : Long) {
+        mPause=false
+        this.startedTime = startedTime;
+        var time = this.startedTime
         val hour = time.toInt() / 3600
         val hourHeight = hour / 10
         val hourMin = hour - hourHeight * 10
@@ -41,14 +42,15 @@ class CounterUpView(
 
         val secLow = time.toInt()
         charLowSecond!!.setChar(secLow)
-
-        elapsedTime = (secLow + secHeight * 10
+        /*
+        startedTime = (secLow + secHeight * 10
                 + minuteLow * 60 + minuteHeight * 600
                 + hourMin * 3600 + hourHeight * 36000).toLong()
+                */
     }
 
-    fun resume(shouldPause: Boolean, shouldRun: Boolean) {
-        setTime(shouldPause, shouldRun)
+    fun resume(startedTime: Long) {
+        setTime(startedTime)
         ViewCompat.postOnAnimationDelayed(mClock, this, 1000)
     }
 
@@ -56,21 +58,21 @@ class CounterUpView(
         if (mPause) {
             return
         }
-        elapsedTime += 1
+        startedTime += 1
        charLowSecond!!.start()
-        if (elapsedTime % 10 == 0L) {
+        if (startedTime % 10 == 0L) {
             charHighSecond!!.start()
         }
-        if (elapsedTime % 60 == 0L) {
+        if (startedTime % 60 == 0L) {
             charLowMinute!!.start()
         }
-        if (elapsedTime % 600 == 0L) {
+        if (startedTime % 600 == 0L) {
            charHighMinute!!.start()
         }
-        if (elapsedTime % 3600 == 0L) {
+        if (startedTime % 3600 == 0L) {
             charLowHour!!.start()
         }
-        if (elapsedTime % 36000 == 0L) {
+        if (startedTime % 36000 == 0L) {
             charHighHour!!.start()
         }
 
