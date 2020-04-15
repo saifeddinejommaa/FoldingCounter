@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="CounterView">
+    <declare-styleable name="BaseCounterView">
         <attr name="custom_component_title" format="reference" />
         <attr name="digitTextSize" format="dimension" />
         <attr name="digitPadding" format="dimension" />
@@ -10,6 +10,7 @@
         <attr name="digitNumberColor" format="color" />
         <attr name="digitDeviderColor" format="color" />
         <attr name="digitspringColor" format="color"></attr>
+        <attr name ="withtext" format="boolean"></attr>
     </declare-styleable>
 
 </resources>
