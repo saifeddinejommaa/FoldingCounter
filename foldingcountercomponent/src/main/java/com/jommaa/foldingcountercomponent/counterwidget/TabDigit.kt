@@ -53,10 +53,6 @@ class TabDigit @JvmOverloads constructor(
 
     private val mTextMeasured = Rect()
 
-    private var mPaddingWidth = 0
-
-    private var mPaddingHeight = 0
-
 
     /**
      * Sets chars that are going to be displayed.
@@ -70,20 +66,6 @@ class TabDigit @JvmOverloads constructor(
         get() = mNumberPaint.textSize
         set(size) {
             mNumberPaint.textSize = size.toFloat()
-            requestLayout()
-        }
-
-    var paddingHeight: Int
-        get() = mPaddingHeight
-        set(padding) {
-            mPaddingHeight = padding
-            requestLayout()
-        }
-
-    var paddingWidth: Int
-        get() = mPaddingWidth
-        set(padding) {
-            mPaddingWidth = padding
             requestLayout()
         }
 
@@ -179,8 +161,8 @@ class TabDigit @JvmOverloads constructor(
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
         calculateTextSize(mTextMeasured)
 
-        val childWidth = mTextMeasured.width() + mPaddingWidth
-        val childHeight = mTextMeasured.height() + mPaddingHeight
+        val childWidth = mTextMeasured.width() + 60
+        val childHeight = mTextMeasured.height() + 60
         measureTabs(childWidth, childHeight)
 
         val maxChildWidth = mMiddleTab.maxWith()
@@ -387,11 +369,11 @@ class TabDigit @JvmOverloads constructor(
             applyTransformation(canvas, mModelViewMatrix)
             val path = getPath(20f, false, false, true, true)
             canvas.drawPath(path, mBackgroundPaint)
-            canvas.drawLine(mStartBounds.left + resources.getDimension(R.dimen.corner_small_radius).toInt(), 0f, mStartBounds.left + resources.getDimension(R.dimen.corner_small_radius).toInt(), (-resources.getDimension(R.dimen.digit_borders_height).toInt()).toFloat(), mSpringPaint)
-            canvas.drawLine(mStartBounds.left + resources.getDimension(R.dimen.corner_small_radius).toInt(), 0f, mStartBounds.left + resources.getDimension(R.dimen.corner_small_radius).toInt(), resources.getDimension(R.dimen.corner_small_radius).toInt().toFloat(), mSpringPaint)
+            canvas.drawLine(mStartBounds.left + resources.getDimension(R.dimen.corner_small_radius).toInt(), 0f, mStartBounds.left + resources.getDimension(R.dimen.corner_small_radius).toInt(), mNumberPaint.textSize/12.toFloat(), mSpringPaint)
+            canvas.drawLine(mStartBounds.left + resources.getDimension(R.dimen.corner_small_radius).toInt(), 0f, mStartBounds.left + resources.getDimension(R.dimen.corner_small_radius).toInt(), mNumberPaint.textSize/12, mSpringPaint)
 
-            canvas.drawLine(mStartBounds.right - resources.getDimension(R.dimen.corner_small_radius).toInt(), 0f, mStartBounds.right - resources.getDimension(R.dimen.corner_small_radius).toInt(), (-resources.getDimension(R.dimen.digit_borders_height).toInt()).toFloat(), mSpringPaint)
-            canvas.drawLine(mStartBounds.right - resources.getDimension(R.dimen.corner_small_radius).toInt(), 0f, mStartBounds.right - resources.getDimension(R.dimen.corner_small_radius).toInt(), resources.getDimension(R.dimen.corner_small_radius).toInt().toFloat(), mSpringPaint)
+            canvas.drawLine(mStartBounds.right - resources.getDimension(R.dimen.corner_small_radius).toInt(), 0f, mStartBounds.right - resources.getDimension(R.dimen.corner_small_radius).toInt(), mNumberPaint.textSize/12, mSpringPaint)
+            canvas.drawLine(mStartBounds.right - resources.getDimension(R.dimen.corner_small_radius).toInt(), 0f, mStartBounds.right - resources.getDimension(R.dimen.corner_small_radius).toInt(), mNumberPaint.textSize/12, mSpringPaint)
 
             canvas.restore()
         }

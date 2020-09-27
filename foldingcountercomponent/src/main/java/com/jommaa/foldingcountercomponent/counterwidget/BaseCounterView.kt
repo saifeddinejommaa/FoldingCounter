@@ -28,7 +28,6 @@ attrs: AttributeSet?)  : LinearLayout(context,attrs), Runnable {
         orientation = HORIZONTAL
         val attributes = context.obtainStyledAttributes(attrs, R.styleable.BaseCounterView)
         val textSize = attributes.getDimensionPixelSize(R.styleable.BaseCounterView_digitTextSize,60)
-        val padding = attributes.getDimensionPixelSize(R.styleable.BaseCounterView_digitPadding, -1)
 
         val cornerSize = attributes.getDimensionPixelSize(R.styleable.BaseCounterView_digitCornerSize, -1)
         val textColor = attributes.getColor(R.styleable.BaseCounterView_digitTextColor,1)
@@ -41,9 +40,7 @@ attrs: AttributeSet?)  : LinearLayout(context,attrs), Runnable {
         charHighSecond.textSize = textSize.toFloat()
         charHighSecond.fontColor = backgroundColor
         charHighSecond.textColor = textColor
-        charHighSecond.paddingWidth = padding
         charHighSecond.cornerSize = cornerSize
-        charHighSecond.paddingHeight= padding
         charHighSecond.dividerColor = dividerColor
         charHighSecond.springColor =  springColor
 
@@ -52,9 +49,7 @@ attrs: AttributeSet?)  : LinearLayout(context,attrs), Runnable {
         charLowSecond.textSize = textSize.toFloat()
         charLowSecond.fontColor = backgroundColor
         charLowSecond.textColor = textColor
-        charLowSecond.paddingWidth = padding
         charLowSecond.cornerSize = cornerSize
-        charLowSecond.paddingHeight= padding
         charLowSecond.dividerColor = dividerColor
         charLowSecond.springColor =  springColor
 
@@ -62,9 +57,7 @@ attrs: AttributeSet?)  : LinearLayout(context,attrs), Runnable {
         charHighMinute.textSize = textSize.toFloat()
         charHighMinute.fontColor = backgroundColor
         charHighMinute.textColor = textColor
-        charHighMinute.paddingWidth = padding
         charHighMinute.cornerSize = cornerSize
-        charHighMinute.paddingHeight= padding
         charHighMinute.dividerColor = dividerColor
 
 
@@ -74,9 +67,7 @@ attrs: AttributeSet?)  : LinearLayout(context,attrs), Runnable {
         charLowMinute.textSize = textSize.toFloat()
         charLowMinute.fontColor = backgroundColor
         charLowMinute.textColor = textColor
-        charLowMinute.paddingWidth = padding
         charLowMinute.cornerSize = cornerSize
-        charLowMinute.paddingHeight= padding
         charLowMinute.dividerColor = dividerColor
         charLowMinute.springColor =  springColor
 
@@ -85,9 +76,7 @@ attrs: AttributeSet?)  : LinearLayout(context,attrs), Runnable {
         charHighHour.textSize = textSize.toFloat()
         charHighHour.fontColor = backgroundColor
         charHighHour.textColor = textColor
-        charHighHour.paddingWidth = padding
         charHighHour.cornerSize = cornerSize
-        charHighHour.paddingHeight= padding
         charHighHour.dividerColor = dividerColor
         charHighHour.springColor =  springColor
 
@@ -96,9 +85,7 @@ attrs: AttributeSet?)  : LinearLayout(context,attrs), Runnable {
         charLowHour.textSize = textSize.toFloat()
         charLowHour.fontColor = backgroundColor
         charLowHour.textColor = textColor
-        charLowHour.paddingWidth = padding
         charLowHour.cornerSize = cornerSize
-        charLowHour.paddingHeight= padding
         charLowHour.dividerColor = dividerColor
         charLowHour.springColor =  springColor
 

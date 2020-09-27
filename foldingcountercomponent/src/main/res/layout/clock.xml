@@ -3,13 +3,15 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 <LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
     android:orientation="horizontal">
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:orientation="vertical">
 
         <LinearLayout
@@ -19,11 +21,13 @@
             <com.jommaa.counterwidget.TabDigit
                 android:id="@+id/charHighHour"
                 android:layout_width="wrap_content"
+                android:layout_marginRight="0.5dp"
                 android:layout_height="wrap_content" />
 
             <com.jommaa.counterwidget.TabDigit
                 android:id="@+id/charLowHour"
                 android:layout_width="wrap_content"
+                android:layout_marginLeft="0.5dp"
                 android:layout_height="wrap_content" />
 
         </LinearLayout>
@@ -47,6 +51,7 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:orientation="vertical">
 
         <LinearLayout
@@ -57,11 +62,13 @@
             <com.jommaa.counterwidget.TabDigit
                 android:id="@+id/charHighMinute"
                 android:layout_width="wrap_content"
+                android:layout_marginRight="0.5dp"
                 android:layout_height="wrap_content" />
 
             <com.jommaa.counterwidget.TabDigit
                 android:id="@+id/charLowMinute"
                 android:layout_width="wrap_content"
+                android:layout_marginLeft="0.5dp"
                 android:layout_height="wrap_content" />
         </LinearLayout>
 
@@ -83,6 +90,7 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:orientation="vertical">
 
         <LinearLayout
@@ -93,11 +101,13 @@
             <com.jommaa.counterwidget.TabDigit
                 android:id="@+id/charHighSecond"
                 android:layout_width="wrap_content"
+                android:layout_marginRight="0.5dp"
                 android:layout_height="wrap_content" />
 
             <com.jommaa.counterwidget.TabDigit
                 android:id="@+id/charLowSecond"
                 android:layout_width="wrap_content"
+                android:layout_marginLeft="0.5dp"
                 android:layout_height="wrap_content" />
         </LinearLayout>
 
